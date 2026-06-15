@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lumorā | Curated Ambient Living</title>
+  <!-- Google Fonts: clean modern sans + elegant serif for uniqueness -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #1e2a2e;
+      scroll-behavior: smooth;
+    }
+
+    /* unique color scheme: warm clay + deep teal */
+    :root {
+      --clay: #c57f5e;
+      --deep-teal: #2a5f5f;
+      --sand: #f6ede8;
+      --warm-gray: #4a3b32;
+      --gold-accent: #cfaa7a;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header */
+    .top-bar {
+      background: white;
+      border-bottom: 1px solid #eee3db;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 253, 250, 0.98);
+      backdrop-filter: blur(2px);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--deep-teal);
+    }
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      display: block;
+      color: var(--clay);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e3b;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--clay);
+    }
+    .icon-group {
+      display: flex;
+      gap: 18px;
+    }
+    .icon-group i {
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #2c3e3b;
+    }
+
+    /* hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      margin: 48px 0 64px;
+    }
+    .hero-content {
+      flex: 1.1;
+    }
+    .hero-content .badge {
+      background: var(--gold-accent);
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #2c3e2c;
+      border-radius: 40px;
+      margin-bottom: 20px;
+    }
+    .hero-content h2 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--deep-teal);
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #4f5e5a;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+    .btn-primary {
+      background-color: var(--clay);
+      border: none;
+      padding: 14px 34px;
+      font-weight: 600;
+      color: white;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background-color: #a55d3e;
+      transform: translateY(-2px);
+    }
+    .hero-image {
+      flex: 1;
+      background: #e7d9cf;
+      border-radius: 48px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .hero-image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* featured collection */
+    .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--deep-teal);
+      margin: 60px 0 20px;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: var(--gold-accent);
+      margin: 12px auto 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+      margin: 40px 0 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+      transition: all 0.25s ease;
+      border: 1px solid #f0e4db;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.12);
+      border-color: #e2cfc1;
+    }
+    .product-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: #f4ede7;
+      transition: 0.2s;
+    }
+    .product-info {
+      padding: 20px 18px 22px;
+    }
+    .product-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+    .product-category {
+      font-size: 0.75rem;
+      color: var(--clay);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--deep-teal);
+      margin-bottom: 16px;
+    }
+    .add-to-cart {
+      background: transparent;
+      border: 1.5px solid var(--clay);
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: var(--clay);
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+    }
+    .add-to-cart:hover {
+      background: var(--clay);
+      color: white;
+    }
+
+    /* unique feature banner */
+    .feature-banner {
+      background: #e7dfd7;
+      border-radius: 48px;
+      margin: 70px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      overflow: hidden;
+    }
+    .feature-text {
+      flex: 1;
+      padding: 48px 36px;
+    }
+    .feature-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--deep-teal);
+      margin-bottom: 16px;
+    }
+    .feature-text p {
+      color: #3f514c;
+      margin-bottom: 20px;
+    }
+    .feature-img {
+      flex: 1;
+      min-height: 280px;
+    }
+    .feature-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* testimony */
+    .testimonial {
+      background: #ffffffdb;
+      border-radius: 56px;
+      padding: 48px 36px;
+      text-align: center;
+      margin: 40px 0 60px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #f5e7df;
+    }
+    .testimonial i {
+      font-size: 2.8rem;
+      color: var(--gold-accent);
+      opacity: 0.5;
+    }
+    .testimonial p {
+      font-size: 1.3rem;
+      font-style: italic;
+      max-width: 700px;
+      margin: 20px auto;
+      color: #2d3e3a;
+      font-weight: 450;
+    }
+    .customer {
+      font-weight: 600;
+      color: var(--clay);
+    }
+
+    /* footer */
+    footer {
+      background: #1e2e2a;
+      color: #ddd9cf;
+      padding: 48px 0 28px;
+      margin-top: 60px;
+      border-radius: 48px 48px 0 0;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: #ecd9cc;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col p, .footer-col a {
+      color: #bcb3a4;
+      text-decoration: none;
+      line-height: 1.7;
+    }
+    .social i {
+      font-size: 1.4rem;
+      margin-right: 16px;
+      color: #bcb3a4;
+      transition: 0.2s;
+    }
+    .social i:hover {
+      color: var(--gold-accent);
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.8rem;
+      border-top: 1px solid #3e544e;
+      padding-top: 28px;
+    }
+
+    @media (max-width: 780px) {
+      .hero-content h2 {
+        font-size: 2.2rem;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .feature-text {
+        padding: 32px 24px;
+      }
+    }
+    button {
+      background: none;
+      border: none;
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container nav-wrapper">
+    <div class="logo">
+      <h1>LUMORĀ<span>Atelier of Quiet Elegance</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="icon-group">
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-bag-shopping"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  <!-- Hero Section with unique image (luxury ceramic vase) -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="badge"> ✦ NEW SEASON EDIT ✦</div>
+      <h2>Where stillness meets form</h2>
+      <p>Handcrafted objects for mindful interiors. Each piece tells a story of texture, earth, and slow living.</p>
+      <a href="#" class="btn-primary">Discover Lumorā <i class="fa-solid fa-arrow-right-long" style="margin-left: 8px;"></i></a>
+    </div>
+    <div class="hero-image">
+      <img src="https://picsum.photos/id/126/700/500" alt="Lumora signature ceramic collection" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+  </div>
+
+  <!-- Featured Products (unique naming + real placeholder images from LoremFlick? but using high quality picsum with specific IDs for consistency) -->
+  <div>
+    <div class="section-title">✦ signature vessels ✦</div>
+    <div class="product-grid">
+      
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/36/400/500" alt="Moss Stoneware Vase">
+        <div class="product-info">
+          <div class="product-title">Moss Stoneware Vase</div>
+          <div class="product-category">Hand-thrown ceramic</div>
+          <div class="price">$128</div>
+          <button class="add-to-cart" data-name="Moss Stoneware Vase">Add to cart →</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/20/400/500" alt="Komorebi Coffee Table">
+        <div class="product-info">
+          <div class="product-title">Komorebi Coffee Table</div>
+          <div class="product-category">Solid oak + black steel</div>
+          <div class="price">$589</div>
+          <button class="add-to-cart" data-name="Komorebi Coffee Table">Add to cart →</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/30/400/500" alt="Ember Wool Throw">
+        <div class="product-info">
+          <div class="product-title">Ember Wool Throw</div>
+          <div class="product-category">Alpaca blend, hand-loomed</div>
+          <div class="price">$189</div>
+          <button class="add-to-cart" data-name="Ember Wool Throw">Add to cart →</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/66/400/500" alt="Nocturnal Scented Candle">
+        <div class="product-info">
+          <div class="product-title">Nocturnal Scented Candle</div>
+          <div class="product-category">Soy wax · sandalwood & fig</div>
+          <div class="price">$48</div>
+          <button class="add-to-cart" data-name="Nocturnal Scented Candle">Add to cart →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unique Feature Banner with image -->
+  <div class="feature-banner">
+    <div class="feature-text">
+      <h3>Raw. Refined. Regenerative.</h3>
+      <p>Every Lumorā piece is born from collaboration with master artisans across mediterranean and nordic studios. We celebrate imperfection and the poetry of natural materials — each object carries a unique fingerprint.</p>
+      <a href="#" style="color: var(--clay); font-weight: 600;">Explore the manifesto →</a>
+    </div>
+    <div class="feature-img">
+      <img src="https://picsum.photos/id/112/600/400" alt="artisan hands shaping clay">
+    </div>
+  </div>
+
+  <!-- Another unique section: bestseller modern lighting -->
+  <div>
+    <div class="section-title">⚡ ambient glow ⚡</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/26/400/500" alt="Lunaris Pendant Light">
+        <div class="product-info">
+          <div class="product-title">Lunaris Pendant</div>
+          <div class="product-category">Alabaster · warm dimmable</div>
+          <div class="price">$276</div>
+          <button class="add-to-cart" data-name="Lunaris Pendant">Add to cart →</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/80/400/500" alt="Terra Table Lamp">
+        <div class="product-info">
+          <div class="product-title">Terra Table Lamp</div>
+          <div class="product-category">Textured stoneware base</div>
+          <div class="price">$199</div>
+          <button class="add-to-cart" data-name="Terra Table Lamp">Add to cart →</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/159/400/500" alt="Kozo Paper Floor Lamp">
+        <div class="product-info">
+          <div class="product-title">Kozo Paper Floor Lamp</div>
+          <div class="product-category">Handmade washi · sculptural</div>
+          <div class="price">$342</div>
+          <button class="add-to-cart" data-name="Kozo Paper Floor Lamp">Add to cart →</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/91/400/500" alt="Ember Glow Candle Holder">
+        <div class="product-info">
+          <div class="product-title">Ember Glow Holder</div>
+          <div class="product-category">Brass + tumbled marble</div>
+          <div class="price">$84</div>
+          <button class="add-to-cart" data-name="Ember Glow Holder">Add to cart →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- testimonial -->
+  <div class="testimonial">
+    <i class="fa-solid fa-quote-left"></i>
+    <p>"Lumorā transformed our living space into a gallery of calm. Every detail whispers quality, and the pieces invite conversation. Absolutely timeless."</p>
+    <div class="customer">— Elena V., Interior Curator</div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>LUMORĀ</h4>
+        <p>Slow homeware for the contemplative mind.<br>Founded in Stockholm & Lisbon.</p>
+        <div class="social" style="margin-top: 16px;">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 Lumorā — Atelier of Quiet Elegance. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- micro interaction for add to cart (console & alert, to show ecom intent) -->
+<script>
+  (function() {
+    // unique site name "Lumorā" appears in UI, but also add cart tracking example
+    const cartButtons = document.querySelectorAll('.add-to-cart');
+    cartButtons.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const productName = this.getAttribute('data-name') || (this.closest('.product-info')?.querySelector('.product-title')?.innerText) || 'item';
+        // unique subtle feedback
+        alert(`✨ Lumorā · "${productName}" added to your basket. Continue shopping.`);
+        // you could extend to a mini cart, but for demo shows ecom readiness
+        console.log(`[LUMORĀ CART] ${productName} added at ${new Date().toLocaleTimeString()}`);
+        // optional: animate button feedback
+        const originalText = this.innerText;
+        this.innerText = '✓ added';
+        setTimeout(() => { if(this) this.innerText = originalText; }, 1200);
+      });
+    });
+
+    // slight hover for hero image smoothness
+    console.log("Lumorā — unique ecom homepage active");
+  })();
+</script>
+</body>
+</html>

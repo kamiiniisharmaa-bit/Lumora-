@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lumorā · Terms of Service</title>
+  <!-- Google Fonts: same unique identity as main site -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #1e2a2e;
+      line-height: 1.5;
+    }
+
+    /* Reuse same brand colors */
+    :root {
+      --clay: #c57f5e;
+      --deep-teal: #2a5f5f;
+      --sand: #f6ede8;
+      --warm-gray: #4a3b32;
+      --gold-accent: #cfaa7a;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header same as homepage for consistency */
+    .top-bar {
+      background: white;
+      border-bottom: 1px solid #eee3db;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 253, 250, 0.98);
+      backdrop-filter: blur(2px);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--deep-teal);
+    }
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      display: block;
+      color: var(--clay);
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e3b;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--clay);
+    }
+    .icon-group {
+      display: flex;
+      gap: 18px;
+    }
+    .icon-group i {
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #2c3e3b;
+    }
+
+    /* terms hero banner (unique minimal) */
+    .terms-hero {
+      background: linear-gradient(105deg, #f4ede7 0%, #fefaf5 100%);
+      padding: 48px 0 32px;
+      border-radius: 0 0 48px 48px;
+      margin-bottom: 24px;
+    }
+    .terms-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--deep-teal);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .terms-sub {
+      color: #5b6e68;
+      max-width: 720px;
+      font-size: 1.1rem;
+      border-left: 3px solid var(--gold-accent);
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .last-updated {
+      font-size: 0.85rem;
+      color: #9c8b7c;
+      margin-top: 12px;
+    }
+
+    /* terms content card style */
+    .terms-content {
+      background: white;
+      border-radius: 40px;
+      padding: 48px 52px;
+      margin: 40px 0 70px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
+      border: 1px solid #efe2d9;
+    }
+
+    .terms-section {
+      margin-bottom: 42px;
+    }
+    .terms-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--deep-teal);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0e2d8;
+      display: inline-block;
+    }
+    .terms-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 24px 0 12px 0;
+      color: #3f544f;
+    }
+    .terms-section p, .terms-section li {
+      color: #2c423e;
+      margin-bottom: 14px;
+      line-height: 1.65;
+    }
+    .terms-section ul, .terms-section ol {
+      margin: 12px 0 20px 28px;
+    }
+    .terms-section li {
+      margin-bottom: 8px;
+    }
+    .highlight {
+      background: #fef3e8;
+      padding: 18px 24px;
+      border-radius: 28px;
+      margin: 24px 0;
+      border-left: 5px solid var(--clay);
+    }
+    a {
+      color: var(--clay);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #a55d3e;
+    }
+
+    /* footer same as main site */
+    footer {
+      background: #1e2e2a;
+      color: #ddd9cf;
+      padding: 48px 0 28px;
+      margin-top: 40px;
+      border-radius: 48px 48px 0 0;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: #ecd9cc;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col p, .footer-col a {
+      color: #bcb3a4;
+      text-decoration: none;
+      line-height: 1.7;
+    }
+    .social i {
+      font-size: 1.4rem;
+      margin-right: 16px;
+      color: #bcb3a4;
+      transition: 0.2s;
+    }
+    .social i:hover {
+      color: var(--gold-accent);
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.8rem;
+      border-top: 1px solid #3e544e;
+      padding-top: 28px;
+    }
+
+    @media (max-width: 780px) {
+      .terms-content {
+        padding: 32px 24px;
+      }
+      .terms-title {
+        font-size: 2.2rem;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .terms-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      color: var(--clay);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container nav-wrapper">
+    <div class="logo">
+      <a href="#" style="text-decoration: none;">
+        <h1>LUMORĀ<span>Atelier of Quiet Elegance</span></h1>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="icon-group">
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-bag-shopping"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Terms Hero -->
+<div class="terms-hero">
+  <div class="container">
+    <div class="terms-title">Terms of Service</div>
+    <div class="terms-sub">Defining the framework of our mutual trust — from craftsmanship to commerce, transparency is our foundation.</div>
+    <div class="last-updated"><i class="fa-regular fa-calendar-alt"></i> Last updated: June 12, 2026 · Version 2.3</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="terms-content">
+    <!-- 1. Overview -->
+    <div class="terms-section">
+      <h2>1. Overview & Agreement</h2>
+      <p>Welcome to Lumorā ("Lumorā", "we", "us", or "our"). These Terms of Service ("Terms") govern your access to and use of the Lumorā website, products, and services (collectively, the "Platform"). By browsing, creating an account, or making a purchase, you agree to be bound by these Terms, our Privacy Policy, and any additional guidelines referenced herein.</p>
+      <p>Lumorā is a curated atelier dedicated to handcrafted objects, ambient lighting, and slow-living homeware. Our mission embraces ethical production, natural materials, and timeless design. If you do not agree with any part of these Terms, please refrain from using our Platform.</p>
+    </div>
+
+    <!-- 2. Account & Eligibility -->
+    <div class="terms-section">
+      <h2>2. Account Registration & Eligibility</h2>
+      <p>To place orders or access certain features, you may need to register for a Lumorā account. You must be at least 18 years old or the age of majority in your jurisdiction. You agree to provide accurate, current, and complete information. You are solely responsible for maintaining the confidentiality of your account credentials and for all activities under your account.</p>
+      <p>We reserve the right to suspend or terminate accounts that violate these Terms, create fraudulent orders, or misuse our community guidelines.</p>
+    </div>
+
+    <!-- 3. Products & Pricing (unique details) -->
+    <div class="terms-section">
+      <h2>3. Products, Craftsmanship & Pricing</h2>
+      <p>Every piece at Lumorā is either handcrafted by independent artisans or produced in limited runs. Due to the nature of natural materials (clay, wood, stone, alabaster), slight variations in color, grain, and form are not defects — they are signatures of authenticity.</p>
+      <p>We strive to display product imagery and descriptions as accurately as possible, but screen resolutions may affect color representation. Pricing is listed in USD (or local currency where available) and does not include applicable taxes or shipping fees unless stated. Lumorā reserves the right to adjust prices, discontinue items, or modify promotions at any time without prior notice.</p>
+      <div class="highlight">
+        <i class="fa-regular fa-gem" style="margin-right: 12px; color: var(--clay);"></i>
+        <strong>Artisan Promise:</strong> Each piece includes information about its maker and origin. If a product is marked "bespoke" or "made-to-order", lead times will be clearly communicated before checkout.
+      </div>
+    </div>
+
+    <!-- 4. Orders, Payment & Shipping -->
+    <div class="terms-section">
+      <h2>4. Orders, Payment & Shipping</h2>
+      <p>By placing an order, you offer to purchase the products subject to these Terms. We reserve the right to cancel any order due to stock unavailability, payment discrepancies, or suspected fraud. In such cases, you will receive a full refund.</p>
+      <p><strong>Payment:</strong> We accept major credit cards, digital wallets, and other methods displayed at checkout. All transactions are encrypted and processed via secure gateways. You represent that you are authorized to use the selected payment method.</p>
+      <p><strong>Shipping & Delivery:</strong> Estimated shipping times are provided during checkout. While we partner with reliable carriers, Lumorā is not liable for delays caused by customs, weather, or courier disruptions. Title and risk of loss pass to you upon delivery. International customers are responsible for any import duties or taxes.</p>
+    </div>
+
+    <!-- 5. Returns, Exchanges & Repairs (unique philosophy) -->
+    <div class="terms-section">
+      <h2>5. Returns, Exchanges & The Lumorā Care</h2>
+      <p>We want you to cherish your Lumorā object. If you are not entirely satisfied, you may initiate a return within <strong>14 days</strong> of delivery for eligible items (unused, in original packaging). Return shipping costs are borne by the customer unless the item arrived damaged or defective.</p>
+      <p>For handcrafted pieces, we offer a <strong>Lifetime Care Service</strong> for minor repairs (wood conditioning, re-gluing, ceramic consolidation) at a nominal fee, ensuring your heirloom lasts generations. Exclusions: misuse, extreme environmental damage, or intentional alteration.</p>
+      <p>Final sale items, limited-edition collaborations, and made-to-order furniture cannot be returned unless faulty. Refunds are processed within 10 business days after inspection.</p>
+    </div>
+
+    <!-- 6. Intellectual Property -->
+    <div class="terms-section">
+      <h2>6. Intellectual Property</h2>
+      <p>All content on the Platform — including but not limited to logos, product photography, text, graphics, icons, and the Lumorā name — is the exclusive property of Lumorā or its licensors. You may not reproduce, distribute, modify, or create derivative works without explicit written permission.</p>
+      <p>The unique design language, "quiet elegance" aesthetic, and product silhouettes are protected under design rights. However, we celebrate inspiration — if you wish to feature our products in editorial contexts, please contact press@lumora-studio.com.</p>
+    </div>
+
+    <!-- 7. Prohibited Conduct -->
+    <div class="terms-section">
+      <h2>7. Prohibited Conduct</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the Platform for any unlawful purpose or to violate any applicable laws.</li>
+        <li>Attempt to bypass security measures, introduce malware, or disrupt the service.</li>
+        <li>Scrape, data-mine, or extract product information for commercial resale without permission.</li>
+        <li>Harass, abuse, or defame any community members or Lumorā staff.</li>
+      </ul>
+      <p>Violations may result in immediate termination of access and legal remedies.</p>
+    </div>
+
+    <!-- 8. Third-Party Links -->
+    <div class="terms-section">
+      <h2>8. Third-Party Links & Collaborations</h2>
+      <p>Our Platform may include links to external sites (e.g., artisan profiles, payment providers). Lumorā does not endorse or assume responsibility for the content or privacy practices of third parties. We recommend reviewing their terms before interacting.</p>
+    </div>
+
+    <!-- 9. Disclaimer of Warranties -->
+    <div class="terms-section">
+      <h2>9. Disclaimer & Limitation of Liability</h2>
+      <p>Lumorā provides the Platform "as is" and "as available." To the fullest extent permitted by law, we disclaim all warranties, express or implied, including merchantability or fitness for a particular purpose. In no event shall Lumorā be liable for any indirect, incidental, or consequential damages arising from your use of products or the Platform, even if advised of the possibility.</p>
+      <p>Our total liability for any claim related to your purchase shall not exceed the amount you paid for the applicable product. Some jurisdictions do not allow certain disclaimers — those provisions apply only to the extent permitted by local law.</p>
+    </div>
+
+    <!-- 10. Indemnification -->
+    <div class="terms-section">
+      <h2>10. Indemnification</h2>
+      <p>You agree to indemnify and hold harmless Lumorā, its founders, artisans, and affiliates from any claims, damages, losses, or expenses (including legal fees) arising out of your breach of these Terms, misuse of the Platform, or violation of any third-party rights.</p>
+    </div>
+
+    <!-- 11. Governing Law & Disputes -->
+    <div class="terms-section">
+      <h2>11. Governing Law & Dispute Resolution</h2>
+      <p>These Terms shall be governed by the laws of Sweden (for our European operations) and the State of California (for US transactions), without regard to conflict-of-law principles. Any dispute arising from these Terms or your use of Lumorā shall first be attempted to be resolved through good-faith negotiation. If unresolved, disputes will be submitted to binding arbitration in Stockholm, Sweden, unless mandatory local law requires otherwise.</p>
+      <p>For EU consumers: you may also use the Online Dispute Resolution platform provided by the European Commission.</p>
+    </div>
+
+    <!-- 12. Modifications & Severability -->
+    <div class="terms-section">
+      <h2>12. Modifications to Terms</h2>
+      <p>Lumorā may update these Terms periodically to reflect changes in legal requirements, business practices, or product offerings. The "Last updated" date at the top indicates the latest revision. Continued use of the Platform after changes constitutes acceptance. If any provision of these Terms is found unenforceable, the remaining provisions remain in full effect.</p>
+    </div>
+
+    <!-- 13. Contact -->
+    <div class="terms-section">
+      <h2>13. Contact Us</h2>
+      <p>For questions regarding these Terms, or to exercise your rights, please reach out to our studio:</p>
+      <p><i class="fa-regular fa-envelope" style="margin-right: 8px; color: var(--clay);"></i> <a href="mailto:legal@lumora-studio.com">legal@lumora-studio.com</a><br>
+      <i class="fa-regular fa-building"></i> Lumorā Atelier, Södermalm 43, 118 26 Stockholm, Sweden<br>
+      <i class="fa-regular fa-clock"></i> Mon–Fri 10:00 – 17:00 CET</p>
+      <div class="highlight">
+        <i class="fa-regular fa-hand-peace"></i> Thank you for being part of the Lumorā community — where each object is a gentle rebellion against the disposable.
+      </div>
+    </div>
+
+    <!-- back to shop link (or homepage) -->
+    <div style="margin-top: 20px;">
+      <a href="#" class="back-link"><i class="fa-solid fa-arrow-left"></i> Return to Lumorā Home</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>LUMORĀ</h4>
+        <p>Slow homeware for the contemplative mind.<br>Founded in Stockholm & Lisbon.</p>
+        <div class="social" style="margin-top: 16px;">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Lumorā — Atelier of Quiet Elegance. All rights reserved. | <a href="#" style="color:#bcb3a4;">Terms of Service</a> | <a href="#" style="color:#bcb3a4;">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- simple interaction for newsletter demo, consistent with ecom -->
+<script>
+  (function() {
+    // Newsletter button simple alert
+    const newsBtn = document.querySelector('.footer-col button');
+    if(newsBtn) {
+      newsBtn.addEventListener('click', function(e) {
+        const emailInput = document.querySelector('.footer-col input[type="email"]');
+        if(emailInput && emailInput.value.trim() !== '') {
+          alert(`✨ Lumorā — thanks for subscribing! You'll receive artisan stories and early access.`);
+          emailInput.value = '';
+        } else {
+          alert('Please enter a valid email address to join the Lumorā journal.');
+        }
+      });
+    }
+    // Add subtle hover effect on terms sections
+    console.log("Lumorā Terms page ready — transparency in craft.");
+  })();
+</script>
+</body>
+</html>

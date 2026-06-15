@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lumorā · Privacy & Data Protection</title>
+  <!-- Google Fonts: same unique identity -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #1e2a2e;
+      line-height: 1.5;
+    }
+
+    /* Brand colors - same as main site */
+    :root {
+      --clay: #c57f5e;
+      --deep-teal: #2a5f5f;
+      --sand: #f6ede8;
+      --warm-gray: #4a3b32;
+      --gold-accent: #cfaa7a;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header consistent with ecom site */
+    .top-bar {
+      background: white;
+      border-bottom: 1px solid #eee3db;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 253, 250, 0.98);
+      backdrop-filter: blur(2px);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--deep-teal);
+    }
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      display: block;
+      color: var(--clay);
+      letter-spacing: 2px;
+    }
+    .logo a {
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e3b;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--clay);
+    }
+    .icon-group {
+      display: flex;
+      gap: 18px;
+    }
+    .icon-group i {
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #2c3e3b;
+    }
+
+    /* privacy hero banner */
+    .privacy-hero {
+      background: linear-gradient(115deg, #f2e8e0 0%, #fefaf5 100%);
+      padding: 48px 0 32px;
+      border-radius: 0 0 48px 48px;
+      margin-bottom: 24px;
+    }
+    .privacy-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--deep-teal);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .privacy-sub {
+      color: #5b6e68;
+      max-width: 720px;
+      font-size: 1.1rem;
+      border-left: 3px solid var(--gold-accent);
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .last-updated {
+      font-size: 0.85rem;
+      color: #9c8b7c;
+      margin-top: 12px;
+    }
+
+    /* main content card */
+    .privacy-content {
+      background: white;
+      border-radius: 40px;
+      padding: 48px 52px;
+      margin: 40px 0 70px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
+      border: 1px solid #efe2d9;
+    }
+
+    .privacy-section {
+      margin-bottom: 44px;
+    }
+    .privacy-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--deep-teal);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0e2d8;
+      display: inline-block;
+    }
+    .privacy-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 24px 0 12px 0;
+      color: #3f544f;
+    }
+    .privacy-section p, .privacy-section li {
+      color: #2c423e;
+      margin-bottom: 14px;
+      line-height: 1.65;
+    }
+    .privacy-section ul, .privacy-section ol {
+      margin: 12px 0 20px 28px;
+    }
+    .privacy-section li {
+      margin-bottom: 8px;
+    }
+    .highlight-box {
+      background: #fef3e8;
+      padding: 20px 28px;
+      border-radius: 28px;
+      margin: 24px 0;
+      border-left: 5px solid var(--clay);
+    }
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .data-card {
+      background: #fefaf5;
+      padding: 18px;
+      border-radius: 24px;
+      border: 1px solid #f0e2d8;
+    }
+    .data-card i {
+      font-size: 1.8rem;
+      color: var(--clay);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .data-card h4 {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--deep-teal);
+    }
+    a {
+      color: var(--clay);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #a55d3e;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      color: var(--clay);
+      font-weight: 500;
+    }
+
+    /* footer same as main site */
+    footer {
+      background: #1e2e2a;
+      color: #ddd9cf;
+      padding: 48px 0 28px;
+      margin-top: 40px;
+      border-radius: 48px 48px 0 0;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: #ecd9cc;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col p, .footer-col a {
+      color: #bcb3a4;
+      text-decoration: none;
+      line-height: 1.7;
+    }
+    .social i {
+      font-size: 1.4rem;
+      margin-right: 16px;
+      color: #bcb3a4;
+      transition: 0.2s;
+    }
+    .social i:hover {
+      color: var(--gold-accent);
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.8rem;
+      border-top: 1px solid #3e544e;
+      padding-top: 28px;
+    }
+
+    @media (max-width: 780px) {
+      .privacy-content {
+        padding: 32px 24px;
+      }
+      .privacy-title {
+        font-size: 2.2rem;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .privacy-section h2 {
+        font-size: 1.5rem;
+      }
+      .data-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container nav-wrapper">
+    <div class="logo">
+      <a href="#" style="text-decoration: none;">
+        <h1>LUMORĀ<span>Atelier of Quiet Elegance</span></h1>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="icon-group">
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-bag-shopping"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Privacy Hero -->
+<div class="privacy-hero">
+  <div class="container">
+    <div class="privacy-title">Privacy & Data Protection</div>
+    <div class="privacy-sub">Your trust is the foundation of our atelier — we safeguard your personal data with the same care we apply to every handcrafted object.</div>
+    <div class="last-updated"><i class="fa-regular fa-calendar-alt"></i> Last revised: June 12, 2026 · Version 3.1</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="privacy-content">
+    
+    <!-- 1. Introduction -->
+    <div class="privacy-section">
+      <h2>1. Who We Are & Our Commitment</h2>
+      <p>Lumorā ("we", "us", "our", "the Atelier") is a slow-living homeware brand founded on principles of transparency, craft, and respect for nature. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit our website, make a purchase, subscribe to our journal, or interact with our studio.</p>
+      <p>We are committed to complying with the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), and other applicable privacy frameworks. By using Lumorā's services, you entrust us with your data — we honor that trust with minimal collection, maximal protection, and never selling your information.</p>
+      <div class="highlight-box">
+        <i class="fa-regular fa-leaf" style="margin-right: 10px; color: var(--clay);"></i>
+        <strong>Our promise:</strong> We only collect data that helps us serve you better — from order fulfillment to artisan stories. No hidden tracking, no unethical sharing.
+      </div>
+    </div>
+
+    <!-- 2. Information We Collect -->
+    <div class="privacy-section">
+      <h2>2. What Information We Collect</h2>
+      <p>To provide you with a seamless experience — from browsing handcrafted vessels to receiving your package — we collect the following categories of data:</p>
+      
+      <div class="data-grid">
+        <div class="data-card">
+          <i class="fa-regular fa-user"></i>
+          <h4>Identity Data</h4>
+          <p>Name, billing/shipping address, email, phone number, and account credentials.</p>
+        </div>
+        <div class="data-card">
+          <i class="fa-regular fa-credit-card"></i>
+          <h4>Transaction Data</h4>
+          <p>Order history, payment method details (securely processed via PCI-compliant gateways), delivery preferences.</p>
+        </div>
+        <div class="data-card">
+          <i class="fa-regular fa-chart-line"></i>
+          <h4>Usage & Device Data</h4>
+          <p>IP address, browser type, pages visited, referral source, and interactions with our platform (via anonymized analytics).</p>
+        </div>
+        <div class="data-card">
+          <i class="fa-regular fa-envelope"></i>
+          <h4>Marketing Preferences</h4>
+          <p>Newsletter subscriptions, survey responses, and product interest signals.</p>
+        </div>
+      </div>
+      <p>We never intentionally collect sensitive data (e.g., health, political beliefs, biometrics). If you share such information voluntarily in customer service inquiries, it will be treated with strict confidentiality.</p>
+    </div>
+
+    <!-- 3. How We Collect Data -->
+    <div class="privacy-section">
+      <h2>3. How We Collect Your Information</h2>
+      <ul>
+        <li><strong>Direct interactions:</strong> When you create an account, place an order, sign up for newsletters, request a repair, or contact our studio.</li>
+        <li><strong>Automated technologies:</strong> Cookies and similar trackers help us remember cart contents, analyze site traffic, and improve navigation. You can manage cookie preferences via browser settings.</li>
+        <li><strong>Third-party sources:</strong> Payment processors (Stripe, PayPal) share transaction confirmation but never full card numbers with us. Social media widgets (Instagram, Pinterest) may collect data according to their own policies.</li>
+      </ul>
+      <div class="highlight-box">
+        <i class="fa-regular fa-cookie-bite"></i> <strong>Cookie Notice:</strong> We use only essential and functional cookies (e.g., cart, authentication). Optional analytics cookies (Plausible, privacy-first) are anonymized. No tracking across third-party sites.
+      </div>
+    </div>
+
+    <!-- 4. Legal Basis & Purpose -->
+    <div class="privacy-section">
+      <h2>4. Why We Process Your Data</h2>
+      <p>Under GDPR and similar laws, Lumorā relies on the following lawful bases for data processing:</p>
+      <ul>
+        <li><strong>Contract performance:</strong> To fulfill orders, process payments, arrange shipping, and manage returns/exchanges.</li>
+        <li><strong>Legitimate interests:</strong> To improve our website, prevent fraud, send service emails (e.g., order confirmations), and personalize recommendations without selling your data.</li>
+        <li><strong>Consent:</strong> For marketing communications (you can unsubscribe anytime), optional surveys, or location-based services.</li>
+        <li><strong>Legal compliance:</strong> To comply with tax, accounting, or consumer protection laws.</li>
+      </ul>
+      <p>We do not engage in automated decision-making or profiling that has legal or significant effects on you.</p>
+    </div>
+
+    <!-- 5. Data Sharing & Disclosure -->
+    <div class="privacy-section">
+      <h2>5. When We Share Your Information</h2>
+      <p>Lumorā never sells your personal data. However, we work with trusted partners to operate our atelier:</p>
+      <ul>
+        <li><strong>Shipping carriers:</strong> DHL, UPS, PostNord (to deliver your order).</li>
+        <li><strong>Payment processors:</strong> Stripe, Klarna, PayPal (they handle payment data directly — we only receive confirmation).</li>
+        <li><strong>IT & analytics providers:</strong> Secure cloud hosting, email delivery services (e.g., ConvertKit), and privacy-focused analytics (Plausible).</li>
+        <li><strong>Legal obligations:</strong> If required by law, court order, or to protect our rights or the safety of our community.</li>
+      </ul>
+      <p>All third-party partners are bound by data processing agreements and only access information necessary for their services.</p>
+    </div>
+
+    <!-- 6. International Transfers -->
+    <div class="privacy-section">
+      <h2>6. International Data Transfers</h2>
+      <p>Lumorā operates from Sweden (EU) and serves customers worldwide. If you are located outside the European Economic Area (EEA), your data may be transferred to and processed in countries with different data protection laws. We ensure adequate safeguards (e.g., Standard Contractual Clauses, EU-US Data Privacy Framework compliance) to protect your information.</p>
+    </div>
+
+    <!-- 7. Data Retention -->
+    <div class="privacy-section">
+      <h2>7. How Long We Keep Your Data</h2>
+      <p>We retain your personal information only as long as necessary to fulfill the purposes outlined in this policy:</p>
+      <ul>
+        <li><strong>Account & order data:</strong> 7 years (to comply with tax and warranty obligations).</li>
+        <li><strong>Marketing data:</strong> Until you unsubscribe or request deletion.</li>
+        <li><strong>Analytics & session data:</strong> 12 months (anonymized after 30 days).</li>
+      </ul>
+      <p>After retention periods expire, we securely delete or anonymize your data.</p>
+    </div>
+
+    <!-- 8. Your Rights & Choices -->
+    <div class="privacy-section">
+      <h2>8. Your Privacy Rights</h2>
+      <p>Depending on your location (EEA, UK, California, Brazil, etc.), you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the data we hold about you.</li>
+        <li><strong>Rectification:</strong> Correct inaccurate or incomplete information.</li>
+        <li><strong>Erasure ("Right to be forgotten"):</strong> Request deletion of your data, subject to legal retention obligations.</li>
+        <li><strong>Restriction & Objection:</strong> Limit how we process your data or object to direct marketing.</li>
+        <li><strong>Data portability:</strong> Receive your data in a structured, machine-readable format.</li>
+        <li><strong>Withdraw consent:</strong> For marketing communications, via unsubscribe link or email request.</li>
+      </ul>
+      <div class="highlight-box">
+        <i class="fa-regular fa-envelope-open-text"></i> <strong>Exercise your rights:</strong> Contact our Data Protection Officer at <a href="mailto:privacy@lumora-studio.com">privacy@lumora-studio.com</a>. We respond within 30 days — never any fee for legitimate requests.
+      </div>
+    </div>
+
+    <!-- 9. Children's Privacy -->
+    <div class="privacy-section">
+      <h2>9. Children's Data</h2>
+      <p>Lumorā does not knowingly collect personal information from individuals under the age of 16. If you believe a child has provided us with data, please contact us immediately so we can delete it.</p>
+    </div>
+
+    <!-- 10. Security Measures -->
+    <div class="privacy-section">
+      <h2>10. How We Protect Your Data</h2>
+      <p>We implement industry-standard security measures including SSL encryption, role-based access controls, regular vulnerability scans, and secure data centers (ISO 27001 certified). Payment information is tokenized and never stored on our servers. While no system is 100% impenetrable, we continuously update our safeguards.</p>
+    </div>
+
+    <!-- 11. Third-Party Links -->
+    <div class="privacy-section">
+      <h2>11. External Links & Social Features</h2>
+      <p>Our website may contain links to independent artisans' portfolios, payment gateways, or social media platforms. This Privacy Policy does not apply to those third-party sites. We encourage you to review their privacy notices before interacting.</p>
+    </div>
+
+    <!-- 12. Changes to This Policy -->
+    <div class="privacy-section">
+      <h2>12. Updates to Our Privacy Practices</h2>
+      <p>We may revise this Privacy Policy occasionally to reflect legal changes, new features, or operational improvements. The "Last revised" date at the top indicates the latest version. Material changes will be notified via email (if you have an account) or via a banner on our website.</p>
+    </div>
+
+    <!-- 13. Contact & Supervisory Authority -->
+    <div class="privacy-section">
+      <h2>13. Contact Us & Complaints</h2>
+      <p>For privacy inquiries, data requests, or concerns, please reach out to our dedicated Privacy Team:</p>
+      <p>
+        <i class="fa-regular fa-envelope" style="margin-right: 8px; color: var(--clay);"></i> <a href="mailto:privacy@lumora-studio.com">privacy@lumora-studio.com</a><br>
+        <i class="fa-regular fa-building"></i> Lumorā Atelier — Data Protection Office, Hornstulls Strand 13, 117 39 Stockholm, Sweden<br>
+        <i class="fa-regular fa-phone"></i> +46 (0)8 121 234 50
+      </p>
+      <p>If you are unsatisfied with our response, you have the right to lodge a complaint with the Swedish Authority for Privacy Protection (IMY) or your local supervisory authority.</p>
+      <div class="highlight-box">
+        <i class="fa-regular fa-heart"></i> Transparency is not just compliance — it's our ethos. Thank you for being part of the Lumorā community.
+      </div>
+    </div>
+
+    <!-- back to homepage -->
+    <div style="margin-top: 20px;">
+      <a href="#" class="back-link"><i class="fa-solid fa-arrow-left"></i> Return to Lumorā Homepage</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>LUMORĀ</h4>
+        <p>Slow homeware for the contemplative mind.<br>Founded in Stockholm & Lisbon.</p>
+        <div class="social" style="margin-top: 16px;">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Lumorā — Atelier of Quiet Elegance. All rights reserved. | <a href="#" style="color:#bcb3a4;">Privacy</a> | <a href="#" style="color:#bcb3a4;">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- newsletter interaction -->
+<script>
+  (function() {
+    const newsBtn = document.querySelector('.footer-col button');
+    if(newsBtn) {
+      newsBtn.addEventListener('click', function(e) {
+        const emailInput = document.querySelector('.footer-col input[type="email"]');
+        if(emailInput && emailInput.value.trim() !== '') {
+          alert(`✨ Lumorā — welcome to the inner circle. You'll receive artisan stories, early access, and mindful inspiration.`);
+          emailInput.value = '';
+        } else {
+          alert('Please enter a valid email address to subscribe to Lumorā journal.');
+        }
+      });
+    }
+    console.log("Lumorā Privacy Policy — respecting your data with artisan care.");
+  })();
+</script>
+</body>
+</html>

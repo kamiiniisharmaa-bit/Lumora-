@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lumorā · About the Atelier</title>
+  <!-- Google Fonts: signature blend of modern and classic -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #1e2a2e;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* brand colors */
+    :root {
+      --clay: #c57f5e;
+      --deep-teal: #2a5f5f;
+      --sand: #f6ede8;
+      --warm-gray: #4a3b32;
+      --gold-accent: #cfaa7a;
+      --sage: #8faa8b;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header consistent with ecosystem */
+    .top-bar {
+      background: white;
+      border-bottom: 1px solid #eee3db;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 253, 250, 0.98);
+      backdrop-filter: blur(2px);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--deep-teal);
+    }
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      display: block;
+      color: var(--clay);
+      letter-spacing: 2px;
+    }
+    .logo a {
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e3b;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--clay);
+    }
+    .icon-group {
+      display: flex;
+      gap: 18px;
+    }
+    .icon-group i {
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #2c3e3b;
+    }
+
+    /* about hero */
+    .about-hero {
+      position: relative;
+      background: linear-gradient(120deg, #e8ddd2 0%, #fcf5ed 100%);
+      padding: 70px 0 60px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .about-hero-content {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .about-hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--deep-teal);
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .about-hero p {
+      font-size: 1.2rem;
+      color: #4f5e5a;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero-deco {
+      position: absolute;
+      bottom: -30px;
+      right: -20px;
+      opacity: 0.1;
+      font-size: 180px;
+      pointer-events: none;
+    }
+
+    /* story section */
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      margin: 70px 0;
+      align-items: center;
+    }
+    .story-text {
+      flex: 1.2;
+    }
+    .story-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--deep-teal);
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .story-text h3:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: var(--gold-accent);
+      margin-top: 12px;
+    }
+    .story-text p {
+      margin-bottom: 20px;
+      color: #3b524c;
+      line-height: 1.7;
+    }
+    .story-image {
+      flex: 1;
+      border-radius: 48px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+    }
+    .story-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .story-image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* values section */
+    .values-section {
+      background: #f6efe9;
+      border-radius: 64px;
+      padding: 60px 40px;
+      margin: 60px 0;
+    }
+    .section-center {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--deep-teal);
+      margin-bottom: 48px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 35px;
+    }
+    .value-card {
+      background: white;
+      padding: 32px 24px;
+      border-radius: 40px;
+      text-align: center;
+      transition: all 0.2s;
+      border: 1px solid #f0e0d4;
+    }
+    .value-card i {
+      font-size: 2.5rem;
+      color: var(--clay);
+      margin-bottom: 20px;
+    }
+    .value-card h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--deep-teal);
+    }
+    .value-card p {
+      color: #5b6e68;
+    }
+
+    /* artisan spotlight */
+    .artisan-spotlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 70px 0;
+      background: white;
+      border-radius: 48px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #efe2d9;
+    }
+    .artisan-img {
+      flex: 1;
+      min-height: 400px;
+    }
+    .artisan-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .artisan-text {
+      flex: 1;
+      padding: 48px 40px;
+    }
+    .artisan-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--deep-teal);
+      margin-bottom: 16px;
+    }
+    .artisan-text .tag {
+      color: var(--clay);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .signature {
+      margin-top: 24px;
+      font-style: italic;
+      border-top: 1px solid #eee3db;
+      padding-top: 24px;
+      color: #8f7a6b;
+    }
+
+    /* sustainability commitment */
+    .sustain {
+      background: #e3dfd8;
+      border-radius: 64px;
+      padding: 56px 48px;
+      margin: 50px 0 30px;
+      text-align: center;
+    }
+    .sustain h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--deep-teal);
+    }
+    .sustain-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 48px;
+      margin: 40px 0 20px;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat .number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--clay);
+    }
+
+    /* footer */
+    footer {
+      background: #1e2e2a;
+      color: #ddd9cf;
+      padding: 48px 0 28px;
+      margin-top: 70px;
+      border-radius: 48px 48px 0 0;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: #ecd9cc;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col p, .footer-col a {
+      color: #bcb3a4;
+      text-decoration: none;
+      line-height: 1.7;
+    }
+    .social i {
+      font-size: 1.4rem;
+      margin-right: 16px;
+      color: #bcb3a4;
+      transition: 0.2s;
+    }
+    .social i:hover {
+      color: var(--gold-accent);
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.8rem;
+      border-top: 1px solid #3e544e;
+      padding-top: 28px;
+    }
+
+    @media (max-width: 780px) {
+      .about-hero h2 {
+        font-size: 2.5rem;
+      }
+      .story-text h3 {
+        font-size: 1.8rem;
+      }
+      .artisan-text {
+        padding: 32px 24px;
+      }
+      .values-section {
+        padding: 40px 20px;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      color: var(--clay);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container nav-wrapper">
+    <div class="logo">
+      <a href="#" style="text-decoration: none;">
+        <h1>LUMORĀ<span>Atelier of Quiet Elegance</span></h1>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="icon-group">
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-bag-shopping"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="about-hero">
+  <div class="container about-hero-content">
+    <h2>The soul of slow craft</h2>
+    <p>Lumorā was born from a quiet rebellion — against mass production, against the disposable, and in favor of objects that carry memory, touch, and time.</p>
+  </div>
+  <div class="hero-deco">
+    <i class="fa-regular fa-moon"></i>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Origin story -->
+  <div class="story-grid">
+    <div class="story-text">
+      <h3>Founded between two coasts</h3>
+      <p>In 2019, architect Elena Voss and ceramicist Markos Lemos met in a small studio in Lisbon's Alfama district. Both were frustrated by how the home goods industry prioritized speed over substance. They dreamed of an atelier that honored both the hand that shapes and the space that holds.</p>
+      <p>Lumorā (from "lumen" + "aurora") opened its first digital doors in 2021. Today, we collaborate with over 30 independent artisans across Portugal, Sweden, and Japan — each piece carrying a story of raw material, patient making, and timeless design.</p>
+      <p>We don't chase seasons. We follow the rhythm of craft — clay drying, wood settling, light shifting. This is slow living, made tangible.</p>
+    </div>
+    <div class="story-image">
+      <img src="https://picsum.photos/id/154/600/500" alt="Artisan workshop interior with ceramic pieces">
+    </div>
+  </div>
+
+  <!-- Values: Unique approach -->
+  <div class="values-section">
+    <div class="section-center">✦ our guiding principles ✦</div>
+    <div class="values-grid">
+      <div class="value-card">
+        <i class="fa-regular fa-hand-peace"></i>
+        <h4>Handmade ethics</h4>
+        <p>Every object is crafted by a master artisan receiving fair wages and creative credit. No assembly lines, no hidden factories.</p>
+      </div>
+      <div class="value-card">
+        <i class="fa-regular fa-leaf"></i>
+        <h4>Natural palettes</h4>
+        <p>We work exclusively with stone, clay, reclaimed wood, wool, and plant-based finishes — materials that age gracefully.</p>
+      </div>
+      <div class="value-card">
+        <i class="fa-regular fa-clock"></i>
+        <h4>Generous durability</h4>
+        <p>Lifetime repair service for all ceramic and wooden pieces. We design heirlooms, not trends.</p>
+      </div>
+      <div class="value-card">
+        <i class="fa-regular fa-hand-sparkles"></i>
+        <h4>Radical transparency</h4>
+        <p>Each product page includes the artisan’s name, village, and exact materials. Traceability is non-negotiable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Artisan spotlight (unique story) -->
+  <div class="artisan-spotlight">
+    <div class="artisan-img">
+      <img src="https://picsum.photos/id/148/600/500" alt="Ceramic artist Keiko Tanaka working on a vase">
+    </div>
+    <div class="artisan-text">
+      <div class="tag">✦ master artisan series ✦</div>
+      <h3>Keiko Tanaka · Kyoto stoneware</h3>
+      <p>Keiko has been working with local Shigaraki clay for over three decades. Her signature 'nami' (wave) texture appears in our bestselling Moss Stoneware collection. "Clay speaks if you listen," she says. Each piece is fired in a noborigama kiln, giving it subtle ash glaze variations that no machine can replicate.</p>
+      <p>Lumorā is proud to support Keiko's studio as part of our commitment to preserving traditional Japanese ceramics. A portion of every sale funds apprenticeship programs for young potters in Shiga prefecture.</p>
+      <div class="signature">— "Imperfection is intimacy. I hope each vessel holds your tea, your flowers, your silences."</div>
+    </div>
+  </div>
+
+  <!-- Sustainability & impact -->
+  <div class="sustain">
+    <h3>Tangible impact, quiet footprint</h3>
+    <div class="sustain-stats">
+      <div class="stat">
+        <div class="number">98%</div>
+        <p>plastic-free packaging<br>(compostable & recycled)</p>
+      </div>
+      <div class="stat">
+        <div class="number">1%</div>
+        <p>for the planet — donated to<br>reforestation & craft preservation</p>
+      </div>
+      <div class="stat">
+        <div class="number">zero</div>
+        <p>fast fashion warehouses<br>(made-to-order & small batch only)</p>
+      </div>
+    </div>
+    <p style="max-width: 600px; margin: 24px auto 0;">We offset all shipping emissions and fund ethical supply chain audits. Being a smaller atelier means we can take responsibility for every link.</p>
+  </div>
+
+  <!-- meet the founders (brief) -->
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; margin: 70px 0;">
+    <div style="flex: 1; background: white; border-radius: 40px; padding: 32px; border: 1px solid #efe2d9;">
+      <img src="https://picsum.photos/id/64/100/100" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;">
+      <h4 style="font-size: 1.4rem; margin-bottom: 8px;">Elena Voss</h4>
+      <p style="color: var(--clay); margin-bottom: 16px;">Co-founder, creative director</p>
+      <p>Previously a furniture designer in Copenhagen, Elena leads our material research and artisan partnerships. She believes objects should "hold silence and invite presence."</p>
+    </div>
+    <div style="flex: 1; background: white; border-radius: 40px; padding: 32px; border: 1px solid #efe2d9;">
+      <img src="https://picsum.photos/id/65/100/100" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;">
+      <h4 style="font-size: 1.4rem; margin-bottom: 8px;">Markos Lemos</h4>
+      <p style="color: var(--clay); margin-bottom: 16px;">Co-founder, master potter</p>
+      <p>Markos trained in Greece and Japan. He oversees glaze chemistry and leads the Lumorā ceramics workshop in Lisbon. His philosophy: "Handmade doesn't mean imperfect — it means alive."</p>
+    </div>
+  </div>
+
+  <!-- link back to shop -->
+  <div style="text-align: center; margin: 20px 0 30px;">
+    <a href="#" class="back-link"><i class="fa-regular fa-store"></i> Explore the collection →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>LUMORĀ</h4>
+        <p>Slow homeware for the contemplative mind.<br>Founded in Stockholm & Lisbon.</p>
+        <div class="social" style="margin-top: 16px;">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Lumorā — Atelier of Quiet Elegance. All rights reserved. | <a href="#" style="color:#bcb3a4;">About</a> | <a href="#" style="color:#bcb3a4;">Terms</a> | <a href="#" style="color:#bcb3a4;">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- newsletter & light interaction -->
+<script>
+  (function() {
+    const newsBtn = document.querySelector('.footer-col button');
+    if(newsBtn) {
+      newsBtn.addEventListener('click', function(e) {
+        const emailInput = document.querySelector('.footer-col input[type="email"]');
+        if(emailInput && emailInput.value.trim() !== '') {
+          alert(`✨ Lumorā — welcome to the atelier. You'll receive stories from our artisans + early access.`);
+          emailInput.value = '';
+        } else {
+          alert('Please enter an email address to join Lumorā’s quiet community.');
+        }
+      });
+    }
+    console.log("Lumorā About — where craft meets soul.");
+  })();
+</script>
+</body>
+</html>
